@@ -1,19 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7bhag81q6a68"]
+[gd_scene load_steps=6 format=3 uid="uid://b7bhag81q6a68"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sxwyt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wy5xv"]
 size = Vector3(5, 0.5, 5)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dafl4"]
+
+[sub_resource type="Sky" id="Sky_d3dmp"]
+sky_material = SubResource("ProceduralSkyMaterial_dafl4")
+
+[sub_resource type="Environment" id="Environment_5jw8y"]
+background_mode = 2
+sky = SubResource("Sky_d3dmp")
+
 [node name="World" type="Node3D"]
 
 [node name="box" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.951428, 0.307871, 0, -0.307871, 0.951428, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(0.951428, 0.307871, 0, -0.307871, 0.951428, 0, 0, 0, 1, 0, 1.13106, 0)
 mesh = SubResource("BoxMesh_sxwyt")
 skeleton = NodePath("../ground")
 
 [node name="ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("BoxMesh_wy5xv")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.51137)
+transform = Transform3D(-0.872965, -0.174504, 0.455501, 1.96672e-08, 0.933818, 0.357749, -0.487784, 0.312302, -0.81519, 5.92283, 5.08174, -12.2304)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5jw8y")

@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cipwb7no53m6v"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dafl4"]
+
+[sub_resource type="Sky" id="Sky_d3dmp"]
+sky_material = SubResource("ProceduralSkyMaterial_dafl4")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_d3dmp")
+glow_normalized = true
+glow_strength = 0.0
+glow_blend_mode = 0
+volumetric_fog_density = 0.0079

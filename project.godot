@@ -14,3 +14,7 @@ config/name="Game-3d-godot-4"
 run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor]
+
+movie_writer/transparent_background=false
